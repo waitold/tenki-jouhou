@@ -69,7 +69,7 @@ def reply_weather():  # メンション送られたツイートに天気情報�
             reply_text = "@"+user_id+"ちょっとわからないですね…"
             api.update_status(status=reply_text, in_reply_to_status_id=status_id)
             with open("log/errorlog.txt", 'w') as file:
-                file.write(status_id, text)
+                file.write(status_id+text)
         else:
             info = weather.get_current_weather(city_name)
             reply_text = "@"+user_id+"今の"+city_kanji+info[0]+"らしいっすよ\n"\
