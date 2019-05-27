@@ -84,8 +84,10 @@ def tweet_word(word):
 def tweet_forecast():
     img_edit.create_forecast_img()
     img_edit.write_text()
+    temp = weather.get_days_forecast("chiba")
     date = (datetime.now() + timedelta(days=1))
-    text = "明日"+str(date.month)+"/"+str(date.day)+"の千葉の天気"
+    text = "明日"+str(date.month)+"/"+str(date.day)+"の千葉の天気"+"\n予想最高気温:"+str(temp[-2]) + \
+           "\n予想最低気温:"+str(temp[-1])
     img = "img/today_weather.png"
     api.update_with_media(filename=img, status=text)
 
