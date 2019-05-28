@@ -6,8 +6,9 @@ import collections
 
 API_KEY = config.WEATHER_KEY
 WEATHER = {"clear sky": "めっちゃ晴れ", "few clouds": "晴れ", "scattered clouds": "まぁ雲ある",
-           "broken clouds": "それなりに曇ってる", "overcast clouds": "曇ってる", "shower rain": "避けれる雨",
-           "rain": "まぁふつうの雨", "thunderstorm": "雷と雨", "snow": "雪ふってる", "mist": "霧かかってる"}
+           "broken clouds": "それなりに曇ってる", "overcast clouds": "曇ってる","light: rain": "雨降ってる？",
+           "shower rain": "避けれる雨", "rain": "まぁふつうの雨", "thunderstorm": "雷と雨", "snow": "雪ふってる",
+           "mist": "霧かかってる"}
 
 
 def get_current_weather(city_name):  # 地名を受け取り天候と最低、最高気温を返す
@@ -55,5 +56,4 @@ def get_days_forecast(city_name, days):  # 一日の天気予報を3時間ごと
 if __name__ == '__main__':
     print(kakasi.to_english("袖ヶ浦"))
     info = get_days_forecast("sodegaura", 1)
-    get_current_weather("nagano")
     print(info)
