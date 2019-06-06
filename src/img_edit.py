@@ -14,7 +14,7 @@ def create_forecast_img():
     forecast = weather.get_days_forecast("Chiba", 1)
     description = forecast[0]
     for img in description:
-        img_list.append(cv2.imread("img/icon/"+IMG[img]))
+        img_list.append(cv2.imread("img/icon/"+img+".png"))
         img_list.append(cv2.imread("img/icon/text_blank.png"))
     im_h = cv2.hconcat(img_list)
     cv2.imwrite("img/today_weather.png", im_h)

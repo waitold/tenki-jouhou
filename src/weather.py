@@ -44,7 +44,7 @@ def get_days_forecast(city_name, days):  # 一日の天気予報を3時間ごと
     info = []
 
     for day in data["list"]:
-        days_weather.append(day["weather"][0]["description"])
+        days_weather.append(day["weather"][0]["icon"])
         max_temp.append(day["main"]["temp_max"])
         min_temp.append(day["main"]["temp_max"])
     info.append(days_weather[(days - 1)*8:days*8])
