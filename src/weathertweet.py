@@ -97,7 +97,6 @@ if __name__ == '__main__':
         f.write("activate"+datetime.now().strftime("%m/%d %H:%M:%S"))
     reply_weather()
     time = datetime.now()
-    print(type(weather.confirm_exists_city("asakusa")))
     if time.hour == 22 and time.minute == 0:
         tweet_forecast()
     elif time.hour == 8 and time.minute == 0:
